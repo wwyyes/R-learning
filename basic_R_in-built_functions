@@ -1,0 +1,42 @@
+# source: https://r-bio.github.io/
+## tapply() allows to repeat a function across each levels of a factor ----------------->
+# format is:
+# tapply(columns_to_do_the_calculations_on, factor_to_sort_on, function)
+# example to calculate the mean for each element in factor
+tapply(surveys_complete$wgt, surveys_complete$species_id, mean)
+
+
+
+## create an empty list to store 10 elements ------------------------->
+vector("list", 10)
+
+
+## quickly create a barplot -------------------------->
+barplot(table(df$V1))
+
+
+## rm NA solutions ----------------------------->
+# several ways can deal with NA values
+# 1) ignore NA
+mean(df$V1, na.rm = TRUE)
+# 2) remove the miisong data
+wgt_noNA <- na.omit(survey$wgt)
+# 3) remove all observations that contain missing data
+surveys_complete <- surveys[compelet.cases(surveys), ]
+
+## template for a function -------------------------->
+sim_brownian <- function(ngen = 100, nrep = 10, main.col = "red", bg.col = "grey50", sd = 1, draw.plot = TRUE, ...){
+  if (nrep < 1){
+    stop("We need at least one replicate")
+  }
+  
+  if (nrep < 2){
+    stop("We need at least 2 generations")
+  }
+  if (nrep < 10){
+    warning("With less than 10 replicates, the possible range of values may not be very representative.")
+  }
+  
+}
+
+
