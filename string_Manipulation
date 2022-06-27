@@ -1,0 +1,22 @@
+library(stringr)
+
+
+## str_length() -------------->
+str_length(c("cat", "dog", "giraffe", "cute dog", "very cute kitten"))
+## [1]  3  3  7  8 16
+
+
+## str_sub() ----------------->
+# it can take 3 arguments: a vector of class "character", a beginning and an end.
+# negative numbers indicates characters from the end, the last one being -1
+str_sub("a very cute kitten", start=3, end=6)
+## [1] "very"
+str_sub("a very cute kitten", start=-6)
+## [1] "kitten"
+#str_sub() can also be used to replace parts of a string:
+str_sub("The cutest animals are puppies", -7) <- "kittens"
+
+## str_trim() and str_pad()---------------->
+# str_trim() removes leading and trailing spaces
+# str_pad() addes whitespace (or other characters) on the right,left or both to make a string a given length()
+
